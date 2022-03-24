@@ -19,7 +19,7 @@ $$
 SELECT host_id,
        hostname,
        round5(host_usage.timestamp) AS timestamp_rounded,
-       AVG(ROUND((total_mem - memory_free*1000.0)*100/total_mem,2)) AS avg_mem_used
+       ROUND(AVG((total_mem - memory_free*1000.0)*100/total_mem),2) AS avg_mem_used
 FROM host_usage
 INNER JOIN host_info
     ON host_usage.host_id = host_info.id
@@ -34,4 +34,5 @@ FROM host_usage
          INNER JOIN host_info
                     ON host_usage.host_id = host_info.id
 GROUP BY 1, 2
+HAVING COUNT(*) < 3
 ORDER BY 2 asc;
