@@ -24,19 +24,19 @@ The technologies used in this project are the following:
 ```
 ./scripts/psql_docker.sh start
 ```
-- Create tables using ddl.sql
+3. Create tables using ddl.sql
 ```
 psql -h localhost -U PSQL_USERNAME -d host_agent -f sql/ddl.sql
 ```
-- Insert hardware specs data into the DB using host_info.sh
+4. Insert hardware specs data into the DB using host_info.sh
 ```
 ./scripts/host_info.sh localhost 5432 host_agent PSQL_USERNAME PSQL_PASSWORD
 ```
-- Insert hardware usage data into the DB using host_usage.sh
+5. Insert hardware usage data into the DB using host_usage.sh
 ```
 ./scripts/host_usage.sh localhost 5432 host_agent PSQL_USERNAME PSQL_PASSWORD
 ```
-- Crontab setup
+6. Crontab setup
 ```
 crontab -e
 * * * * * ABSOLUTE_PATH_TO_DIRECTORY/linux_sql/scripts/host_usage.sh
