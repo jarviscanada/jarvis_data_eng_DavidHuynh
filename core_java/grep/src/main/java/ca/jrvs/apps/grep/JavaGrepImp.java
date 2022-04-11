@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
@@ -52,8 +53,15 @@ public class JavaGrepImp implements JavaGrep {
 
   @Override
   public void process() throws IOException {
-    List<String> matchedLines = new ArrayList<>();
+    //List<String> matchedLines = new ArrayList<>();
     List<File> files = listFiles(this.rootPath);
+    writeToFile(files.stream()
+        .map(f -> readLines(f))
+        .flatMap(f -> f.stream())
+        .filter(f -> containsPattern(f))
+        .collect(Collectors.toList())
+    );
+    /*
     for (File file : files){
       List<String> lines = readLines(file);
       for (String line : lines){
@@ -63,6 +71,8 @@ public class JavaGrepImp implements JavaGrep {
       }
     }
     writeToFile(matchedLines);
+
+     */
   }
 
   @Override
@@ -123,7 +133,6 @@ public class JavaGrepImp implements JavaGrep {
     for (String line : lines){
       outWriter.write(line);
     }
-
     outWriter.close();
   }
 
