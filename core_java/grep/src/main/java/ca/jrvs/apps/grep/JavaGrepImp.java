@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -51,17 +52,9 @@ public class JavaGrepImp implements JavaGrep {
     }
   }
 
-  @Override
   public void process() throws IOException {
-    //List<String> matchedLines = new ArrayList<>();
+    List<String> matchedLines = new ArrayList<>();
     List<File> files = listFiles(this.rootPath);
-    writeToFile(files.stream()
-        .map(f -> readLines(f))
-        .flatMap(f -> f.stream())
-        .filter(f -> containsPattern(f))
-        .collect(Collectors.toList())
-    );
-    /*
     for (File file : files){
       List<String> lines = readLines(file);
       for (String line : lines){
@@ -71,12 +64,10 @@ public class JavaGrepImp implements JavaGrep {
       }
     }
     writeToFile(matchedLines);
-
-     */
   }
 
   @Override
-  public List<File> listFiles(String rootDir) {
+  public List<File> listFiles(String rootDir) throws IOException {
     List<File> files = new ArrayList<>();
     File cur = new File(rootDir);
     Queue<File> q= new LinkedList<>();
@@ -101,7 +92,7 @@ public class JavaGrepImp implements JavaGrep {
   }
 
   @Override
-  public List<String> readLines(File inputFile) {
+  public List<String> readLines(File inputFile) throws IllegalArgumentException, IOException {
     List<String> lines = new ArrayList<>();
     try(BufferedReader br = new BufferedReader(new FileReader(inputFile))){
       String line;
