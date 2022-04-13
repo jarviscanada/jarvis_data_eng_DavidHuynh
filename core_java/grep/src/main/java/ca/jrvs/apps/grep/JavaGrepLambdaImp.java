@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -43,28 +44,16 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
     }
   }
 
-  public List<String> readLines(File inputFile) {
-    List<String> lines = new ArrayList<>();
-
-    try(BufferedReader br = new BufferedReader(new FileReader(inputFile))){
-      lines = br.lines().collect(Collectors.toList());
-      br.close();
-    } catch (FileNotFoundException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    return lines;
+  @Override
+  public List<String> readLines(File inputFile) throws IllegalArgumentException, IOException {
+    return Files.newBufferedReader(inputFile.toPath(), Charset.forName("ISO-8859-1")).lines().collect(
+        Collectors.toList());
   }
 
-  public List<File> listFiles(String rootDir) {
-    List<File> files = new ArrayList<>();
-    try (Stream<Path> tree = Files.walk(Paths.get(rootDir))
-                                  .filter(p -> !p.toFile().isDirectory())) {
-      files = tree.map(p -> p.toFile()).collect(Collectors.toList());
-    } catch (IOException e){
-      e.printStackTrace();
-    }
-    return files;
+  @Override
+  public List<File> listFiles(String rootDir) throws IOException {
+    return Files.walk(Paths.get(rootDir))
+        .filter(p -> !p.toFile().isDirectory())
+        .map(p -> p.toFile()).collect(Collectors.toList());
   }
 }
