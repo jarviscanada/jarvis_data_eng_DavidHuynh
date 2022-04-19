@@ -8,26 +8,19 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class JavaGrepImp implements JavaGrep {
 
-  private final Logger logger = LoggerFactory.getLogger(JavaGrep.class);
+  final Logger logger = LoggerFactory.getLogger(JavaGrep.class);
 
   private String regex;
   private String rootPath;
@@ -47,12 +40,16 @@ public class JavaGrepImp implements JavaGrep {
 
     try {
       javaGrepImp.process();
+    } catch (IOException e){
+      javaGrepImp.logger.error("Error: IOException", e);
+    } catch (IllegalArgumentException e){
+      javaGrepImp.logger.error("Error: Illegal Argument", e);
     } catch (Exception ex) {
       javaGrepImp.logger.error("Error: Unable to process", ex);
     }
   }
 
-  public void process() throws IOException {
+  public void process() throws IOException, IllegalArgumentException {
     List<String> matchedLines = new ArrayList<>();
     List<File> files = listFiles(this.rootPath);
     for (File file : files){
@@ -99,11 +96,10 @@ public class JavaGrepImp implements JavaGrep {
       while ((line = br.readLine()) != null){
         lines.add(line);
       }
-      br.close();
     } catch (FileNotFoundException e) {
-      e.printStackTrace();
+      throw new IllegalArgumentException(e);
     } catch (IOException e) {
-      e.printStackTrace();
+      throw new IllegalArgumentException(e);
     }
     return lines;
   }
