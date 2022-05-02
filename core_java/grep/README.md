@@ -29,7 +29,9 @@ For example:
 docker run --rm -v `pwd`/data:/data -v `pwd`/log:/log dvdhyh22/grep .*Romeo.*Juliet.* /data /log/grep.out
 ```
 
-#Implemenation
+
+#Implementation
+
 ## Pseudocode
 ```
 linesWithPattern = []
@@ -40,7 +42,6 @@ for file in listFiles(rootDir)
 writeToFile(linesWithPattern)
 ```
 ## Performance Issue
-(30-60 words)
 The Java Virtual Machine has a heap memory
 space to store data for objects such as lists. For larger size
 directories and files, the app can run into errors caused by not
