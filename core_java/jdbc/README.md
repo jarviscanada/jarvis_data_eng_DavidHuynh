@@ -6,7 +6,7 @@ connection between a PSQL Database and Java. Maven was used for
 project management. Docker was used for setup for the containerized
 PSQL databases.
 
-# Implementaiton
+# Implementation
 ## ER Diagram
 ![my image](./assets/ER_Diagram.png)
 
