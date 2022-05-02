@@ -15,7 +15,19 @@ The technologies used in this project are the following:
 - Maven for project management
 
 # Quick Start
-How to use your apps?
+To run this application, first pull the docker image from my docker hub
+with the following command:
+```
+docker pull dvdhyh22/grep
+```
+Then run the docker container:
+```
+docker run --rm -v `pwd`INPUT_DIRECTORY:INPUT_DIRECTORY -v `pwd`OUTPUT_DIRECTORY:OUTPUT_DIRECTORY dvdhyh22/grep REGEX INPUT_DIRECTORY PATH_TO_OUTPUT_FILE
+```
+For example:
+```
+docker run --rm -v `pwd`/data:/data -v `pwd`/log:/log dvdhyh22/grep .*Romeo.*Juliet.* /data /log/grep.out
+```
 
 #Implemenation
 ## Pseudocode
@@ -39,7 +51,12 @@ uses Java Streams which are objects that can process data coming
 in without storing.
 
 # Test
-How did you test your application manually? (e.g. prepare sample data, run some test cases manually, compare result)
+For sample data, I used a shakespeare text file that contains over
+900000 words. I tested the application by running the app in IntelliJ
+and changing the input arguments to check lines that have the Romeo
+followed by Juliet anywhere else after in the same line. The lines
+that matched are saved in a temporary out file that I opened to confirm
+that each line matched the REGEX.
 
 # Deployment
 To dockerize the Grep app, I first created a new Docker hub account.
@@ -51,4 +68,7 @@ and used by others.
 How you dockerize your app for easier distribution?
 
 # Improvement
-List three things you can improve in this project.
+Three Improvements:
+1. The app can read in any characters (Some characters are unreadable)
+2. The app can separate the matched lines into separate files
+3. The app can find matching sentences instead of matching lines.
