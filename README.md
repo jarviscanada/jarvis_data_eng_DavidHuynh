@@ -15,13 +15,13 @@ My goal is to grow and develop new skills to be the best version of myself. My f
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_DavidHuynh](https://github.com/jarviscanada/jarvis_data_eng_DavidHuynh)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_DavidHuynh/tree/master/linux_sql)]: Implemented Bash scripts that would allow the collection of hosts' hardware information and usage from nodes of a cluster. This data would be stored into a PostgresSQL database hosted by Docker. The scripts would be continuously scheduled to run using Cron or Crontab jobs.
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_DavidHuynh/tree/master/linux_sql)]: Implemented Bash scripts that would allow the collection of hosts' hardware information and usage from nodes of a cluster. This data would be stored in a PostgresSQL database hosted by Docker. The scripts would be continuously scheduled to run using Cron or Crontab jobs.
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_DavidHuynh/tree/master/core_java)]:
       
   - Twitter App: Not Started
-  - JDBC App: In progress
-  - Grep App: In progress
+  - JDBC App: Created an app that allows one to manipulate customer data from a PostgreSQL database using a Data Access Object within Java. This allows a user to manipulate a database with transactions without calling multiple the queries.
+  - Grep App: Designed an app similar to the command-line grep feature. It allows for regular expression matching on lines from files that belong to a given directory. The app was tested on a txt file with over 900000 words.
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_DavidHuynh/tree/master/springboot)]: Not Started
 
