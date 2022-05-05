@@ -1,0 +1,108 @@
+# Preferred name (Characters only)
+name: "David Huynh"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_DavidHuynh
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: I recently graduated from the University of Toronto with an Honours Bachelor of Science degree in Computer Science and Mathematics. During my four years of University, I have developed critical thinking and problem solving skills and have taken algorithm and design courses as well as courses that improved my Python, Java, and C programming proficiency. My software engineering course gave me experience on MERN stack development while also experiencing Agile methodologies with team members. I am currently working at Jarvis as a software developer where I have created projects using Java, PostgreSQL, Docker, and Linux/Bash Scripting. My goal is to grow and develop new skills to be the best version of myself. Also, I want to apply my knowledge to make the work environment a better place for team members, leaders, and clients.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Linux/Bash
+    - RDBMS/SQL
+    - Agile/Scrum
+    - Git
+  # At least 5 skills
+  competent:
+    - Python
+    - Docker
+    - C
+    - Windows and Linux OS
+    - Algorithm Design
+  # At least 5 skills
+  familiar:
+    - JavaScript
+    - Node.js
+    - React.js
+    - MongoDB
+    - Google Cloud Platform
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Implemented Bash scripts that allows the collection of hosts' hardware information and usage from nodes of a cluster. This data is stored in a PostgresSQL database hosted by Docker. The scripts are continuously scheduled to run using Crontab jobs.
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Twitter App: Not Started"
+      - "JDBC App: Created an app that allows one to manipulate customer data from a PostgreSQL database using a Data Access Object within Java. This allows a user to manipulate a database with transactions without calling multiple queries."
+      - "Grep App: Designed an app similar to the command-line grep feature. It allows for regular expression matching on lines from files that belong to a given directory. The app was tested on a txt file with over 900000 words."
+  #- name: "Springboot App"
+  #  git_url: "/springboot"
+  #  description: ""
+  #- name: "Python Data Analytics"
+  #  git_url: "/python_data_anlytics"
+  #  description: ""
+  #- name: "Hadoop"
+  #  git_url: "/hadoop"
+  #  description: ""
+  #- name: "Spark"
+  #  git_url: "/spark"
+  #  description: ""
+  #- name: "Cloud/DevOps"
+  #  git_url: "/cloud_devops"
+  #  description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Discord Bot"
+    #URL is optional
+    #git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Programmed a bot on the Discord application that can perform tasks for a publicly hosted messaging and voice server. It is developed using Python and uses discord.py API.
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2022-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Coded projects such as the Cluster Monitoring Agent that can be used by software teams to perform resource management over multiple nodes. Learned new languages and technologies prior to implementation of projects. Worked with team members to solve problems and hosted daily meetings for updates and assistance on projects."
+
+#List of edcuation
+education: 
+  - school_name: "University of Toronto"
+    duration: "2017-2021"
+    degree: "Honours Bachelor of Science"
+    department: "Computer Science and Mathematics"
+    # optional
+    awards_achievements:
+
+#Optional section
+others:
+    #category
+  #- title: "Certificates"
+  #  #list of items
+  #  bullets:
+  #    - "Udacity Machine Learning (2019)"
+  #- title: "Awards"
+  #  bullets:
+  #    - "Winner"
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Favourite Sport: Volleyball"
+      - "PC gaming: Valorant, League of Legends"
+      - "Love to eat Asian cuisine"
