@@ -5,7 +5,7 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_DavidHuynh
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: I recently graduated from the University of Toronto with an Honours Bachelor of Science degree in Computer Science and Mathematics. During my four years of University, I have developed critical thinking and problem solving skills and have taken algorithm and design courses as well as courses that improved my Python, Java, and C programming proficiency. My software engineering course gave me experience on MERN stack development while also experiencing Agile methodologies with team members. I am currently working at Jarvis as a software developer where I have created projects using Java, PostgreSQL, Docker, and Linux/Bash Scripting. My goal is to grow and develop new skills to be the best version of myself. Also, I want to apply my knowledge to make the work environment a better place for team members, leaders, and clients.
+summary: I recently graduated from the University of Toronto with an Honours Bachelor of Science degree in Computer Science and Mathematics. During my four years of University, I have developed critical thinking and problem solving skills and have taken algorithm and design courses as well as courses that improved my Python, Java, and C programming proficiency. My software engineering course gave me experience on MERN stack development while also experiencing Agile methodologies with team members. I am currently working at Teranet and Jarvis as a software developer where I have created projects using Java, PostgreSQL, Docker, and Linux/Bash Scripting. My goal is to grow and develop new skills to be the best version of myself. Also, I want to apply my knowledge to make the work environment a better place for team members, leaders, and clients.
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -13,6 +13,7 @@ skills:
   # At least 5 skills
   proficient:
     - Java
+    - XML Configuration
     - Linux/Bash
     - RDBMS/SQL
     - Agile/Scrum
@@ -24,6 +25,8 @@ skills:
     - C
     - Windows and Linux OS
     - Algorithm Design
+    - Excel
+    - Maven
   # At least 5 skills
   familiar:
     - JavaScript
@@ -31,6 +34,7 @@ skills:
     - React.js
     - MongoDB
     - Google Cloud Platform
+    - ElasticSearch
 
 # List of Jarvis projects
 jarvis_projects:
@@ -76,6 +80,11 @@ highlighted_projects:
 #The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
 professional_experience:
   #Write your Jarvis role as a professional experience rather than training.
+  - title: "Configuration Developer"
+    company: "Teranet"
+    duration: "2022-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Collaborated with other developers on two different projects, WritFiling and SEDAR+. Managed pull requests and deployment process onto test environments with a small project team. Resolved critical defects for storing and repopulating saved search criteria within the database using Java and Groovy scripts."
   - title: "Software Developer"
     company: "Jarvis"
     duration: "2022-present"
